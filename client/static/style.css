@@ -1,0 +1,115 @@
+body {
+	background-image: url('./images/logo.jpg');
+	background-repeat: no-repeat;
+	background-position: 80% 20px;
+	background-size: 100px;
+}
+
+.header {
+	font-family: 'Quicksand', sans-serif;
+}
+.motto {
+	font-family: 'Seaweed Script', cursive;
+}
+.headerc {
+	font-family: 'Quicksand', sans-serif;
+	font-size: 1.5em;	
+}
+#search {
+	display: inline-block;
+	font-family: 'Quicksand', sans-serif;
+
+}
+#posting {
+}
+.container {
+	width: 70%;
+	height: auto;
+	margin: 0 auto;
+}
+#dcontainer {
+	width: 70%;
+	height: auto;
+	margin: 0 auto;	
+}
+#dcontainer .header {
+	font-size: 4em;
+}
+#navbar .links {
+	display: inline-block;
+	font-size: 1.25em;
+	font-family: 'Quicksand', sans-serif;
+}
+.welcome {
+	font-family: 'Quicksand', sans-serif;
+	font-size: 2em;	
+}
+.total {
+	font-family: 'Quicksand', sans-serif;
+	font-size: 1.5em;	
+}
+.boxes {
+	background-color: #dbdbdb;
+	padding: 15px;
+	border: 1px solid black;
+}
+a {
+	color: #5a7ddd;
+	text-decoration: none;
+	margin: 5px;
+	font-weight: bold;
+}
+a:hover {
+	color: #000;
+}
+.posting {
+	font-family: 'Quicksand', sans-serif;
+	font-size: 1.5em;
+	margin-left: 200px;	
+}
+.postings {
+	font-family: 'Quicksand', sans-serif;
+	font-size: 1.5em;
+}
+li {
+	list-style-type: none;
+}
+.names {
+	color: #545252;
+	font-size: 1.5em;
+}
+#back {
+	font-size: 1.5em;
+	font-family: 'Quicksand', sans-serif;
+}
+.like {
+	width:3em;
+	height: 3em;
+	border:none;
+	border-radius: 90px;
+	color: #545252;
+	background-color: #7be5ad;
+}
+.post {
+	font-size: 1.25em;	
+	border: none;
+	background-color: #5a7ddd;
+	color: #FFF;	
+}
+#logout {
+	font-size: 1em;	
+	border: none;
+	background-color: #e87171;
+	color: #FFF;
+
+}
+.delete {
+	font-size: 1em;
+	border: none;
+	background-color: #e87171;
+	color: #FFF;	
+
+}
+.eachpost {
+	margin-bottom: 60px;
+}

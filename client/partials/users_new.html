@@ -1,0 +1,60 @@
+<div class="container">
+
+	<div id="header">
+		<h1 class="header">Texas Patriots</h1>
+		<h4 class="motto">Honor | Courage | Commitment</h4>
+	</div>
+
+	<div id="login">
+		<h3 class="header">Login:</h3>
+		<form .form-group ng-submit="UC.login(UC.loginUser)">
+			<div>
+				<label class="header">Email:</label>
+				<input .form-control type="text" ng-model="UC.loginUser.email">
+			</div>
+			<div>
+				<label class="header">Password:</label>
+				<input .form-control type="password" ng-model="UC.loginUser.password">
+			</div>
+			<div>
+				<input class="waves-effect waves-light btn light-blue darken-4" type="submit" value="Login">
+			</div>
+		</form>
+		<ul>
+			<li ng-repeat="error in UC.loginErrors">{{error}}</li>
+		</ul>
+	</div>
+
+	<div id="resgister">
+		<h3 class="header">Register:</h3>
+		<form .form-group ng-submit="UC.create(UC.newUser)">
+			<div>
+				<label class="header">First Name:</label>
+				<input .form-control type="text" ng-model="UC.newUser.firstname">
+			</div>
+			<div>
+				<label class="header">Last Name:</label>
+				<input .form-control type="text" ng-model="UC.newUser.lastname">
+			</div>
+			<div>
+				<label class="header">Email:</label>
+				<input .form-control type="text" ng-model="UC.newUser.email">
+			</div>
+			<div>
+				<label class="header">Password:</label>
+				<input .form-control type="password" ng-model="UC.newUser.password">
+			</div>
+			<div>
+				<label class="header">Password Confirmation</label>
+				<input .form-control type="password" ng-model="UC.newUser.passwordconfirmation">
+			</div>
+			<div>
+				<input class="waves-effect waves-light btn light-blue darken-4" type="submit" value="Register">
+			</div>
+			<ul>
+				<li ng-repeat="error in UC.registrationErrors">{{error}}</li>
+			</ul>			
+		</form>
+	</div>
+
+</div>

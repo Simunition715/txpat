@@ -1,0 +1,49 @@
+<div id="dcontainer">
+	<div ng-controller="UsersController as UC">
+		<div>
+			<h1 class="header">Texas Patriots</h1>
+			<h4 class="motto">Honor | Courage | Commitment</h4>
+		</div>
+		<h2 class="welcome">Welcome {{UC.current_user.first_name}} {{UC.current_user.last_name}}</h2>
+		<div ng-init="UC.indexPost()">
+			<h4 class="total">Current total active posts {{UC.posts.length}}</h4>
+		</div>
+		<div style="display: inline-block;float: right">
+			<button class="waves-effect waves-light btn red accent-4"  ng-click="UC.logout()">Logout</button>
+		</div>	
+		<hr>
+		<div id="posting">
+			<h2 class="welcome">Create a Post or Listing</h2>
+			<form ng-submit="UC.createPost(UC.newPost)">
+			<textarea .form-control placeholder="Description or Content of Post" cols="50" rows="5" ng-model="UC.newPost.post"></textarea>
+			<h5>Upload image(optional)</h5>
+			Please upload your image here <a href="https://imgbb.com/" target="_blank">Upload image</a> and copy and paste the link below <input .form-control type="text" placeholder="Insert image URL here" ng-model="UC.newPost.img"> 	
+			<div>
+				<input class="waves-effect waves-light btn light-blue darken-4"  type="submit" value="Post">	
+			</div>	
+			</form>
+		</div>
+		<hr>
+			<div>
+				 <i class="medium material-icons">search</i><h3 id="search">Search for listings here</h3><input .form-control placeholder="Search" type="text" ng-model="searchText">
+			</div>
+			<div>
+				<ul id="navbar">
+					<li class="links"><a href="#!/myposts/{{UC.current_user._id}}">My Posts</a></li>
+				<!-- 	<li class="links"><a href="#">Commented</a></li> -->
+				</ul>
+			</div>
+		<div>
+			<div class="boxes" ng-init="UC.indexPost()">
+				<ul class="eachpost" ng-repeat="post in UC.posts | filter:searchText | orderBy: '-createdAt'">
+					<li class="postings"><span class="names">{{post.author}}</span> said:</li>
+					<li class="posting">"{{post.post}}" At {{post.createdAt | date:'medium' : 'CT'}}</li>
+					<li class="postings"> <button class="waves-effect waves-light btn green accent-4" ng-click="UC.like(post._id)"><i ng-click="UC.like(post._id)" class="medium material-icons">thumb_up</i></button> {{post.likes}}</li>
+					<li class="postings"><a href="#!/comment/{{post._id}}"> Comment or make offer</a></li>
+					<li class="postings">number of Comments {{post.comments.length}}</li>
+					<li ng-show="UC.current_user.email == post.email || UC.current_user.email == UC.admin1" ng-click="UC.delete(post._id)"><button class="waves-effect waves-light btn red accent-4">DELETE</button></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>	

@@ -1,0 +1,26 @@
+<div class="container">	
+	<a id="back" href="#!/dashboard">Back</a>
+	<div ng-init="UC.show()">
+		<h4 class="header">Post #{{UC.single._id}}</h4>
+		<h2 class="header">{{UC.single.author}} posted</h2>
+		<h2 class="header">{{UC.single.post}}</h2>
+		<a ng-hide="UC.single.img == null" ng-href="{{UC.single.img}}" target="_blank">Click here for image</a>
+	</div>
+
+	<div>
+		<form ng-submit="UC.createComment(UC.newComment)">
+			<textarea ng-model="UC.newComment.comment" cols="40" rows="5"></textarea>
+			<div>
+				<input class="post" type="submit" value="comment">
+			</div>
+			<div>
+			<p>{{UC.commentErrors}}</p>
+			</div>	
+		</form>
+		<div>
+			<ul ng-repeat="key in UC.single.comments">
+				<li class="headerc">{{key.author}} said: {{key.comment}}</li>
+			</ul>
+		</div>
+	</div>
+</div>	

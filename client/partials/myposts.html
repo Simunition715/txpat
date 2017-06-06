@@ -1,0 +1,14 @@
+<div class="container">
+	<h1 class="header">My Posts</h1>
+	<a id="back" href="#!/dashboard">Back</a>
+		<div ng-init="UC.myIndex()">
+			<ul ng-hide="UC.email != post.email" class="eachpost" ng-repeat="post in UC.myPosts">
+				<li class="postings"><span class="names">{{post.author}}</span> said:</li>
+				<li class="posting">"{{post.post}}" At {{post.createdAt | date:'medium' : 'CT'}}</li>
+				<li ng-hide="post.email == UC.current_user.email" class="postings"> <button ng-click="UC.like(post._id)" class="like">Like</button> {{post.likes}}</li>
+				<li class="postings"><a href="#!/comment/{{post._id}}"> View Comments</a></li>
+				<li class="postings">number of Comments {{post.comments.length}}</li>
+				<li ng-show="UC.current_user.email == post.email || UC.current_user.email == UC.admin1" ng-click="UC.delete2(post._id)"><button class="waves-effect waves-light btn red accent-4" >DELETE</button></li>
+			</ul>
+		</div>
+</div>
